@@ -27,6 +27,7 @@ public class RsvpService {
             newRsvp.setGuestName(rsvp.getGuestName());
             newRsvp.setTotalAttending(rsvp.getTotalAttending());
             newRsvp.setPhoneNumber(rsvp.getPhoneNumber());
+            rFeign.createEvent(newRsvp);
             rsvp.setRsvpId(newRsvp.getRsvpId());
             return rsvp;
         }
