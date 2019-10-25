@@ -6,19 +6,24 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="moto-discovery-service" />
+        <module name="service-registry" />
         <module name="rsvp-backing-service" />
+        <module name="rsvp-edge-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="moto-discovery-service" target="1.8" />
       <module name="rsvp-backing-service" target="1.8" />
+      <module name="rsvp-edge-service" target="1.8" />
+      <module name="service-registry" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="moto-discovery-service" options="-parameters" />
       <module name="rsvp-backing-service" options="-parameters" />
+      <module name="rsvp-edge-service" options="-parameters" />
+      <module name="service-registry" options="-parameters" />
     </option>
   </component>
 </project>
