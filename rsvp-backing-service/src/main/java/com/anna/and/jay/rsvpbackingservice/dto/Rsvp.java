@@ -16,16 +16,19 @@ public class Rsvp {
 
     @Size(min = 1, max = 50)
     @NotEmpty(message = "guest name must not be empty")
-    private String guest_name;
+    @Column(name = "guest_name")
+    private String guestName;
 
     @Min(1)
     @Max(4)
     @NotNull(message = "total attending must not be null")
-    private Integer total_attending;
+    @Column(name = "total_attending")
+    private Integer totalAttending;
 
     @NotEmpty
     @Size(min = 1, max = 20)
-    private String phone_number;
+    @Column(name = "phone_number")
+    private String phoneNumber;
 
     public int getId() {
         return id;
@@ -35,28 +38,28 @@ public class Rsvp {
         this.id = id;
     }
 
-    public String getGuest_name() {
-        return guest_name;
+    public String getGuestName() {
+        return guestName;
     }
 
-    public void setGuest_name(String guest_name) {
-        this.guest_name = guest_name;
+    public void setGuestName(String guestName) {
+        this.guestName = guestName;
     }
 
-    public Integer getTotal_attending() {
-        return total_attending;
+    public Integer getTotalAttending() {
+        return totalAttending;
     }
 
-    public void setTotal_attending(Integer total_attending) {
-        this.total_attending = total_attending;
+    public void setTotalAttending(Integer totalAttending) {
+        this.totalAttending = totalAttending;
     }
 
-    public String getPhone_number() {
-        return phone_number;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setPhone_number(String phone_number) {
-        this.phone_number = phone_number;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     @Override
@@ -65,23 +68,23 @@ public class Rsvp {
         if (o == null || getClass() != o.getClass()) return false;
         Rsvp rsvp = (Rsvp) o;
         return getId() == rsvp.getId() &&
-                Objects.equals(getGuest_name(), rsvp.getGuest_name()) &&
-                Objects.equals(getTotal_attending(), rsvp.getTotal_attending()) &&
-                Objects.equals(getPhone_number(), rsvp.getPhone_number());
+                Objects.equals(getGuestName(), rsvp.getGuestName()) &&
+                Objects.equals(getTotalAttending(), rsvp.getTotalAttending()) &&
+                Objects.equals(getPhoneNumber(), rsvp.getPhoneNumber());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getGuest_name(), getTotal_attending(), getPhone_number());
+        return Objects.hash(getId(), getGuestName(), getTotalAttending(), getPhoneNumber());
     }
 
     @Override
     public String toString() {
         return "Rsvp{" +
                 "id=" + id +
-                ", guest_name='" + guest_name + '\'' +
-                ", total_attending=" + total_attending +
-                ", phone_number='" + phone_number + '\'' +
+                ", guestName='" + guestName + '\'' +
+                ", totalAttending=" + totalAttending +
+                ", phoneNumber='" + phoneNumber + '\'' +
                 '}';
     }
 }

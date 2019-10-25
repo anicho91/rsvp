@@ -3,6 +3,7 @@ package com.anna.and.jay.rsvpbackingservice.controller;
 import com.anna.and.jay.rsvpbackingservice.dao.RsvpRepo;
 import com.anna.and.jay.rsvpbackingservice.dto.Rsvp;
 import javassist.NotFoundException;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,6 +11,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
+@RefreshScope
 public class RsvpController {
     private RsvpRepo rsvpRepo;
 

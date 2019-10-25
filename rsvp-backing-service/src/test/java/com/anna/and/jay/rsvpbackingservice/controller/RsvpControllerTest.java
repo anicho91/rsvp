@@ -19,7 +19,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
@@ -49,15 +48,15 @@ public class RsvpControllerTest {
     @Test
     public void createRsvp() throws Exception {
         Rsvp inputRsvp = new Rsvp();
-        inputRsvp.setGuest_name("name");
-        inputRsvp.setTotal_attending(2);
-        inputRsvp.setPhone_number("2222222222");
+        inputRsvp.setGuestName("name");
+        inputRsvp.setTotalAttending(2);
+        inputRsvp.setPhoneNumber("2222222222");
 
         Rsvp outputRsvp = new Rsvp();
         outputRsvp.setId(1);
-        outputRsvp.setGuest_name("name");
-        outputRsvp.setTotal_attending(2);
-        outputRsvp.setPhone_number("2222222222");
+        outputRsvp.setGuestName("name");
+        outputRsvp.setTotalAttending(2);
+        outputRsvp.setPhoneNumber("2222222222");
 
         doReturn(outputRsvp).when(rsvpRepo).save(inputRsvp);
 
@@ -78,9 +77,9 @@ public class RsvpControllerTest {
     public void fetchRsvp() throws Exception {
         Rsvp outputRsvp = new Rsvp();
         outputRsvp.setId(1);
-        outputRsvp.setGuest_name("name");
-        outputRsvp.setTotal_attending(2);
-        outputRsvp.setPhone_number("2222222222");
+        outputRsvp.setGuestName("name");
+        outputRsvp.setTotalAttending(2);
+        outputRsvp.setPhoneNumber("2222222222");
 
         doReturn(Optional.of(outputRsvp)).when(rsvpRepo).findById(outputRsvp.getId());
 
@@ -96,19 +95,19 @@ public class RsvpControllerTest {
         List<Rsvp> rsvpList = new ArrayList<>();
         Rsvp outputRsvp1 = new Rsvp();
         outputRsvp1.setId(1);
-        outputRsvp1.setGuest_name("name");
-        outputRsvp1.setTotal_attending(2);
-        outputRsvp1.setPhone_number("2222222222");
+        outputRsvp1.setGuestName("name");
+        outputRsvp1.setTotalAttending(2);
+        outputRsvp1.setPhoneNumber("2222222222");
         Rsvp outputRsvp2 = new Rsvp();
         outputRsvp2.setId(1);
-        outputRsvp2.setGuest_name("name");
-        outputRsvp2.setTotal_attending(2);
-        outputRsvp2.setPhone_number("2222222222");
+        outputRsvp2.setGuestName("name");
+        outputRsvp2.setTotalAttending(2);
+        outputRsvp2.setPhoneNumber("2222222222");
         Rsvp outputRsvp3 = new Rsvp();
         outputRsvp3.setId(1);
-        outputRsvp3.setGuest_name("name");
-        outputRsvp3.setTotal_attending(2);
-        outputRsvp3.setPhone_number("2222222222");
+        outputRsvp3.setGuestName("name");
+        outputRsvp3.setTotalAttending(2);
+        outputRsvp3.setPhoneNumber("2222222222");
 
         rsvpList.add(outputRsvp1);
         rsvpList.add(outputRsvp2);
@@ -126,15 +125,15 @@ public class RsvpControllerTest {
     public void updateRsvp() throws Exception {
         Rsvp outputRsvp2 = new Rsvp();
         outputRsvp2.setId(1);
-        outputRsvp2.setGuest_name("name");
-        outputRsvp2.setTotal_attending(2);
-        outputRsvp2.setPhone_number("2222222222");
+        outputRsvp2.setGuestName("name");
+        outputRsvp2.setTotalAttending(2);
+        outputRsvp2.setPhoneNumber("2222222222");
 
         Rsvp outputRsvp3 = new Rsvp();
         outputRsvp3.setId(1);
-        outputRsvp3.setGuest_name("name");
-        outputRsvp3.setTotal_attending(2);
-        outputRsvp3.setPhone_number("2222222222");
+        outputRsvp3.setGuestName("name");
+        outputRsvp3.setTotalAttending(2);
+        outputRsvp3.setPhoneNumber("2222222222");
 
         doReturn(Optional.of(outputRsvp2)).when(rsvpRepo).findById(1);
         doReturn(outputRsvp3).when(rsvpRepo).save(outputRsvp3);
